@@ -1,0 +1,1855 @@
+<!doctype html>
+<html lang="ko" data-bs-theme="auto">
+    <head>
+                    <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125017129-2"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'UA-125017129-2');
+            </script>
+
+            
+            <script src="https://hb.vntsm.com/v4/live/vms/sites/ordsearch.net/index.js"
+                                        async></script>
+            <script src="/js/vntsm-ad.js?id=0661a73370c55b3aa4de"></script>
+                <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=1190">
+        <meta name="csrf-token" content="RokZmQOGwGFvC7nm7Otndwni3Qr4WmEkiM1QN0Qb">
+        <meta name="description" content="초월, 불멸, 히든 조합, 흔함 유닛 갯수, 스킬, 조합도우미 등 원랜디에 등장하는 유닛정보 및 조합을 검색">
+        <meta property="og:title" content="몽키 · D · 루피 흔함 : 원랜디 캐릭터 검색기">
+        <meta property="og:description" content="원피스 랜덤 디펜스의 모든 유닛을 검색하고 조합해보세요">
+        <meta property="og:image" content="https://ordsearch.net/images/ordsearch_og.png">
+        <title>몽키 · D · 루피 흔함 : 원랜디 캐릭터 검색기</title>
+        <link rel="canonical" href="https://ordsearch.net/characters/1">
+        <link rel="stylesheet" href="/css/bootstrap-5.3.7.min.css">
+        <link rel="stylesheet" href="/css/app2.css?id=2e40441e5babd2858c06">
+        <link rel="stylesheet" href="/css/jquery-ui.min.css">
+        <link rel="stylesheet" href="/css/jquery.orgchart.min.css">
+        <script type="text/javascript">
+            // 다크모드 여부 감지해서 직접 설정해줘야 함
+            (function () {
+                const storedDarkModeValue = localStorage.getItem('darkMode');
+                if (storedDarkModeValue === 'dark' || storedDarkModeValue === 'light') {
+                    document.documentElement.setAttribute('data-bs-theme', storedDarkModeValue);
+                } else {
+                    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    document.documentElement.setAttribute('data-bs-theme', isDark ? 'dark' : 'light');
+                }
+            })();
+            const staticPrefixPath = '/storage';
+            const unitMainImagePath = '/images/units/ord';
+        </script>
+    </head>
+    <body>
+        <div id="globalAlertWrapper" class="sticky-top">
+                    </div>
+        <div class=""  style="border-top:solid #007bff 2px;" >
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><b><i class="fas fa-skull"></i> ORDSearch</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavBar" aria-controls="headerNavBar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="headerNavBar" class="navbar-collapse collapse">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link " href="/posts/notices">공지</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  active " href="/characters">유닛</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle "
+                       data-bs-toggle="dropdown"
+                       href="#"
+                       role="button"
+                       aria-haspopup="true"
+                       aria-expanded="false">
+                        조합식
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/mix/ddaro">조합식 (따로국밥)</a>
+                        <a class="dropdown-item" href="/mix">조합식 (한눈)</a>
+                        <a class="dropdown-item" href="/mix/common">흔함 조합식 (한눈)</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle "
+                       data-bs-toggle="dropdown"
+                       href="#"
+                       role="button"
+                       aria-haspopup="true"
+                       aria-expanded="false">
+                        조합도우미
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="https://ordsearch.net/mix/helper">조합도우미</a>
+                        <a class="dropdown-item" href="https://ordsearch.net/mix/my-helpers">내 조합도우미</a>
+                        <a class="dropdown-item" href="https://ordsearch.net/s1/mix/helper">시즌1 조합도우미</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="https://ordsearch.net/how-about-decks">이 조합 어때요?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/public-saves">클리어</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/saves">클리어 저장</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle    "
+                       data-bs-toggle="dropdown"
+                       href="#"
+                       role="button"
+                       aria-haspopup="true"
+                       aria-expanded="false">
+                        커뮤니티 <i class="fas fa-exclamation-circle"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/posts/notices">공지사항</a>
+                        <a class="dropdown-item" href="/wagles">와글와글</a>
+                        <a class="dropdown-item" href="https://ordsearch.net/how-about-decks">이 조합 어때요?</a>
+                        <a class="dropdown-item" href="https://ordsearch.net/vs-matches">대결 몇대몇!</a>
+                        <div class="dropdown-divider"></div>
+                        <h6 class="dropdown-header">같이해요</h6>
+                        <a class="dropdown-item" href="/with-game/reforged"><i class="fas fa-reply fa-rotate-180"></i> 리포지드</a>
+                        <a class="dropdown-item" href="/with-game/battle-lan"><i class="fas fa-reply fa-rotate-180"></i> 배틀랜</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle "
+                       href="#"
+                       id="toolsNavbarDropdown"
+                       role="button"
+                       data-bs-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false">
+                        TOOLS
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="toolsNavbarDropdown">
+                        <a class="dropdown-item" href="/deck">
+                            패 짜보기
+                        </a>
+                        <a class="dropdown-item" href="/tools/bansal">
+                            밴살고르기
+                        </a>
+                        <a id="toastMemoButton" class="dropdown-item" href="javascript:">메모</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle "
+                       href="#" id="tipNavbarDropdown"
+                       role="button" data-bs-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false">
+                        팁
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="tipNavbarDropdown">
+                        <a class="dropdown-item" href="/posts/tips/39">항법 정보 (시즌2)</a>
+                        <a class="dropdown-item" href="/posts/tips/1">특성포인트 얻기</a>
+                        <a class="dropdown-item" href="/posts/tips/2">기타 유닛(재료) 얻기</a>
+                        <a class="dropdown-item" href="/posts/tips/34">물, 마뎀 구분법</a>
+                        <a class="dropdown-item" href="/posts/tips/26">짤짤이 간단 팁 모음</a>
+                        <a class="dropdown-item" href="https://gall.dcinside.com/mgallery/board/view/?id=ordc1&no=123316&page=1" target="_blank">
+                            원랜디 아이템 목록 <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a class="dropdown-item" href="https://gall.dcinside.com/mgallery/board/view/?id=ordc1&amp;no=206068" target="_blank">
+                            디시 원랜디 갤러리 팁 모음 <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </li>
+                            </ul>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a id="currentDarkModeIcon" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item dark-mode-select-button" href="#" data-mode="light"><i class="bi bi-brightness-high-fill"></i> 밝게</a></li>
+                        <li><a class="dropdown-item dark-mode-select-button" href="#" data-mode="dark"><i class="bi bi-moon-stars-fill"></i> 어둡게</a></li>
+                        <li data-bs-toggle="tooltip" data-bs-title="브라우저 설정을 따라갑니다.">
+                            <a class="dropdown-item dark-mode-select-button" href="#" data-mode="auto"><i class="bi bi-circle-half"></i> 자동</a>
+                        </li>
+                    </ul>
+                </li>
+                                    <li class="nav-item">
+                        <a class="nav-link " href="https://ordsearch.net/login?redirect=https://ordsearch.net/characters/1">로그인</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="https://ordsearch.net/register">회원가입</a>
+                    </li>
+                            </ul>
+                            <form class="d-flex" action="https://ordsearch.net/search" role="search">
+                    <input type="hidden" name="sc" value="uni">
+                    <input type="hidden" name="w" value="search.gnb">
+                    <input class="form-control me-2"
+                           name="query"
+                           type="search"
+                           maxlength="30"
+                           placeholder="통합검색"
+                           value="">
+                    <button class="btn btn-outline-light" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                    </div>
+    </div>
+</nav>
+                                                <div class="my-3" style="justify-items: center;">
+                                                    <div style="min-height: 250px;">
+                                <div id="dTakeoverAdEl"></div>
+                            </div>
+                                            </div>
+                                <div class="container" style="max-width: 1140px;">
+                                            <div class="mt-4 pt-3 mx-auto" style="width:1130px;">
+    <div class="float-start" style="width:240px;padding-top:2px;">
+        <a class="text-decoration-none" href="/"><img src="/images/main-logo3.png" style="width:93%"></a>
+    </div>
+    <div class="float-start" style="margin-top:5px;">
+        <form action="https://ordsearch.net/characters">
+            <input type="hidden" name="w" value="search.search">
+                        <div class="input-group">
+                <input class="form-control border-primary fw-bold"
+                       type="search"
+                       maxlength="30"
+                       name="query"
+                       value=""
+                       style="border-width:2px;width:500px;height:50px;font-size:1.1rem;">
+                <button class="btn btn-primary btn-lg" type="submit">
+                    <i class="fas fa-search fa-lg"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="clearfix"></div>
+    <div class="ms-4 mt-1" style="padding-left: 215px;">
+                                                <a class="hover-underline text-decoration-none"
+                   href="https://ordsearch.net/search?query=%ED%85%8C%EC%A1%B0%EB%A1%9C&amp;sc=uni&amp;w=guide.search">
+                    테조로
+                </a>
+                                 <span class="mx-1" style="color:#c9c9c9;">|</span>                 <a class="hover-underline text-decoration-none"
+                   href="https://ordsearch.net/search?query=%EB%B8%8C%EB%A5%84%EB%A0%88&amp;sc=uni&amp;w=guide.search">
+                    브륄레
+                </a>
+                                 <span class="mx-1" style="color:#c9c9c9;">|</span>                 <a class="hover-underline text-decoration-none"
+                   href="https://ordsearch.net/search?query=%EB%B6%88%EB%A6%BF&amp;sc=uni&amp;w=guide.search">
+                    불릿
+                </a>
+                                 <span class="mx-1" style="color:#c9c9c9;">|</span>                 <a class="hover-underline text-decoration-none"
+                   href="https://ordsearch.net/search?query=%EC%83%8C%EC%A6%88&amp;sc=uni&amp;w=guide.search">
+                    샌즈
+                </a>
+                                 <span class="mx-1" style="color:#c9c9c9;">|</span>                 <a class="hover-underline text-decoration-none"
+                   href="https://ordsearch.net/search?query=%EB%8B%A8%EC%9D%BC&amp;sc=uni&amp;w=guide.search">
+                    단일
+                </a>
+                                 <span class="mx-1" style="color:#c9c9c9;">|</span>                 <a class="hover-underline text-decoration-none"
+                   href="https://ordsearch.net/search?query=%EB%81%9D%EB%94%9C&amp;sc=uni&amp;w=guide.search">
+                    끝딜
+                </a>
+                                 <span class="mx-1" style="color:#c9c9c9;">|</span>                 <a class="hover-underline text-decoration-none"
+                   href="https://ordsearch.net/search?query=%EB%B0%A9%EA%B9%8D&amp;sc=uni&amp;w=guide.search">
+                    방깍
+                </a>
+                                 <span class="mx-1" style="color:#c9c9c9;">|</span>                 <a class="hover-underline text-decoration-none"
+                   href="https://ordsearch.net/search?query=%EC%8A%A4%ED%84%B4&amp;sc=uni&amp;w=guide.search">
+                    스턴
+                </a>
+                         </div>
+</div>
+<div class="mt-3 pt-2">
+    <ul class="nav nav-tabs">
+        <li class="nav-item me-2">
+            <a class="nav-link "
+               href="https://ordsearch.net/search?sc=uni&amp;w=search.tab">전체</a>
+        </li>
+        <li class="nav-item me-2">
+            <a class="nav-link  active "
+               href="https://ordsearch.net/characters?w=search.tab">유닛</a>
+        </li>
+        <li class="nav-item me-2">
+            <a class="nav-link "
+               href="https://ordsearch.net/search?sc=comment&amp;w=search.tab">댓글</a>
+        </li>
+        <li class="nav-item me-2">
+            <a class="nav-link "
+               href="https://ordsearch.net/search?sc=dialogue&amp;w=search.tab">원피스 대사</a>
+        </li>
+        <li class="nav-item me-2">
+            <a class="nav-link "
+               href="https://ordsearch.net/search?sc=had&amp;w=search.tab">이 조합 어때요</a>
+        </li>
+        <li class="nav-item me-2">
+            <a class="nav-link "
+               href="https://ordsearch.net/search?sc=wagle&amp;w=search.tab">와글와글</a>
+        </li>
+        <li class="nav-item" data-bs-toggle="tooltip" title="리뷰 오브 캐릭터즈">
+            
+            <a class="nav-link "
+               href="https://ordsearch.net/search?sc=roc&amp;w=search.tab">ROC</a>
+        </li>
+    </ul>
+</div>
+<div class="clearfix"></div>
+<div class="border-bottom position-relative" style="z-index: 1000;">
+    <div class="nav nav-pills py-2 mx-auto" style="width:1140px;">
+        <form action="/characters">
+            <div class="d-flex mt-1">
+                <div class="row align-middle" style="min-width: 210px;">
+                    <label class="col pt-1" for="unitLevelSelect" style="max-width: 84px;">유닛등급</label>
+                    <div class="col">
+                        <select id="unitLevelSelect" class="form-select form-select-sm" name="level">
+                            <option value="">전체</option>
+                                                            <option value="1" >
+                                    흔함
+                                </option>
+                                                            <option value="2" >
+                                    안흔함
+                                </option>
+                                                            <option value="3" >
+                                    특별함
+                                </option>
+                                                            <option value="4" >
+                                    희귀함
+                                </option>
+                                                            <option value="5" >
+                                    전설적인
+                                </option>
+                                                            <option value="6" >
+                                    히든조합
+                                </option>
+                                                            <option value="7" >
+                                    왜곡됨
+                                </option>
+                                                            <option value="8" >
+                                    변화된
+                                </option>
+                                                            <option value="9" >
+                                    제한됨
+                                </option>
+                                                            <option value="10" >
+                                    초월함
+                                </option>
+                                                            <option value="11" >
+                                    불멸의
+                                </option>
+                                                            <option value="12" >
+                                    영원한
+                                </option>
+                                                            <option value="13" >
+                                    병기
+                                </option>
+                                                            <option value="14" >
+                                    기타
+                                </option>
+                                                            <option value="15" >
+                                    특수함
+                                </option>
+                                                            <option value="16" >
+                                    랜덤전용
+                                </option>
+                                                            <option value="17" >
+                                    거인족
+                                </option>
+                                                            <option value="18" >
+                                    신비함
+                                </option>
+                                                            <option value="19" >
+                                    기록지침
+                                </option>
+                                                            <option value="20" >
+                                    연구소
+                                </option>
+                                                            <option value="21" >
+                                    없음
+                                </option>
+                                                            <option value="22" >
+                                    아이템
+                                </option>
+                                                    </select>
+                    </div>
+                </div>
+                <div class="ms-3">
+                    <button class="btn btn-sm"
+                            type="button"
+                            role="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#unitSkillBox"
+                            aria-expanded=" false "
+                            aria-controls="unitSkillBox">
+                        유닛 스킬 <i class="fas fa-chevron-circle-down "></i>
+                    </button>
+                </div>
+                <div class="ms-3">
+                    <button class="btn btn-outline-primary btn-sm" type="submit"><i class="fas fa-search"></i> 검색</button>
+                    <a class="btn btn-outline-primary btn-sm" href="/characters" role="button"><i class="fas fa-redo"></i> 초기화</a>
+                    <a class="btn btn-outline-primary btn-sm"
+                       href="/characters/comments"
+                       role="button">
+                        <i class="fas fa-comment"></i> 유닛 댓글
+                    </a>
+                    <a class="btn btn-dark btn-sm fw-bold ms-2"
+                       href="/characters?order=mlike"
+                       role="button"
+                       style="color:#ff80ff;">
+                        <i class="fas fa-magic"></i> 마법데미지 추천
+                    </a>
+                    <a class="btn btn-dark btn-sm fw-bold"
+                       href="/characters?order=plike"
+                       role="button"
+                       style="color:#ff8200;">
+                        <i class="far fa-hand-rock"></i> 물리데미지 추천
+                    </a>
+                    <a class="btn btn-dark btn-sm fw-bold"
+                       href="/characters?order=slike"
+                       role="button"
+                       style="color: yellowgreen;">
+                        <i class="fas fa-home"></i> 스토리 추천
+                    </a>
+                </div>
+            </div>
+            <div id="unitSkillBox" class="collapse  p-3 mt-2 mb-3 text-left border me-4">
+                <div class="text-left mb-1 text-danger fw-bold">* 이름순으로 정렬</div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="damagebCheck"
+                               name="feature[]"
+                               value="damageb"
+                               >
+                        <label class="form-check-label" for="damagebCheck">공격력 버프</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="speedbCheck"
+                               name="feature[]"
+                               value="speedb"
+                               >
+                        <label class="form-check-label" for="speedbCheck">공격속도 버프</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="skyCheck"
+                               name="feature[]"
+                               value="sky"
+                               >
+                        <label class="form-check-label" for="skyCheck">공중이동</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="berserkCheck"
+                               name="feature[]"
+                               value="berserk"
+                               >
+                        <label class="form-check-label" for="berserkCheck">광폭화 특화</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="sstunCheck"
+                               name="feature[]"
+                               value="sstun"
+                               >
+                        <label class="form-check-label" for="sstunCheck">단일 적 스턴</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="singlelostCheck"
+                               name="feature[]"
+                               value="singlelost"
+                               >
+                        <label class="form-check-label" for="singlelostCheck">단일 적 잃은체력 %데미지</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="lastCheck"
+                               name="feature[]"
+                               value="last"
+                               >
+                        <label class="form-check-label" for="lastCheck">단일 적 전체체력 %데미지</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="singleCheck"
+                               name="feature[]"
+                               value="single"
+                               >
+                        <label class="form-check-label" for="singleCheck">단일 적 현재체력 %데미지</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="regenCheck"
+                               name="feature[]"
+                               value="regen"
+                               >
+                        <label class="form-check-label" for="regenCheck">마나회복</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="dockingCheck"
+                               name="feature[]"
+                               value="docking"
+                               >
+                        <label class="form-check-label" for="dockingCheck">마법데미지 증폭</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="mshieldCheck"
+                               name="feature[]"
+                               value="mshield"
+                               >
+                        <label class="form-check-label" for="mshieldCheck">마법방어력 감소</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="shieldCheck"
+                               name="feature[]"
+                               value="shield"
+                               >
+                        <label class="form-check-label" for="shieldCheck">방어력 감소</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="ignoreCheck"
+                               name="feature[]"
+                               value="ignore"
+                               >
+                        <label class="form-check-label" for="ignoreCheck">방어무시 데미지</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="rangellpdCheck"
+                               name="feature[]"
+                               value="rangellpd"
+                               >
+                        <label class="form-check-label" for="rangellpdCheck">범위 적 잃은체력 %데미지</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="rangetlpdCheck"
+                               name="feature[]"
+                               value="rangetlpd"
+                               >
+                        <label class="form-check-label" for="rangetlpdCheck">범위 적 전체체력 %데미지</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="rangenlpdCheck"
+                               name="feature[]"
+                               value="rangenlpd"
+                               >
+                        <label class="form-check-label" for="rangenlpdCheck">범위 적 현재체력 %데미지</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="stunCheck"
+                               name="feature[]"
+                               value="stun"
+                               >
+                        <label class="form-check-label" for="stunCheck">범위스턴</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="bossCheck"
+                               name="feature[]"
+                               value="boss"
+                               >
+                        <label class="form-check-label" for="bossCheck">보스특화</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="blinkCheck"
+                               name="feature[]"
+                               value="blink"
+                               >
+                        <label class="form-check-label" for="blinkCheck">순간이동</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="splashCheck"
+                               name="feature[]"
+                               value="splash"
+                               >
+                        <label class="form-check-label" for="splashCheck">스플래시 데미지</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="armorbreakCheck"
+                               name="feature[]"
+                               value="armorbreak"
+                               >
+                        <label class="form-check-label" for="armorbreakCheck">아머브레이크</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="udeleteCheck"
+                               name="feature[]"
+                               value="udelete"
+                               >
+                        <label class="form-check-label" for="udeleteCheck">유닛삭제</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="slowCheck"
+                               name="feature[]"
+                               value="slow"
+                               >
+                        <label class="form-check-label" for="slowCheck">이동속도 감소</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="lifeCheck"
+                               name="feature[]"
+                               value="life"
+                               >
+                        <label class="form-check-label" for="lifeCheck">체력회복</label>
+                    </div>
+                                    <div class="form-check form-check-inline" style="min-width:193px;">
+                        <input class="form-check-input border-secondary"
+                               type="checkbox"
+                               id="bombupCheck"
+                               name="feature[]"
+                               value="bombup"
+                               >
+                        <label class="form-check-label" for="bombupCheck">폭발형 데미지 증폭</label>
+                    </div>
+                            </div>
+        </form>
+    </div>
+</div>
+                                            <div class="row mt-4 mb-5 px-1 container" style="min-width:1130px;">
+        <div class="col-8 pe-1">
+                                                                                                        <div class=" character-info">
+                                                                        <table class="table table-sm table-borderless ">
+                            <tr>
+                                <td class="align-top thumb-wrapper" rowspan="5">
+                                    <img src="https://ordsearch.b-cdn.net/images/units/ord/1.png?id=20210202222624"
+                                         width="105"
+                                         height="105"
+                                         alt="몽키 · D · 루피 - 흔함">
+                                                                            <div class="text-center damage-wrapper mt-1" style="width:105px;">
+                                            <span>22</span> - <span>25</span>
+                                        </div>
+                                                                    </td>
+                                <td colspan="3" class="fw-bold name-info">
+                                    <a href="/characters/1" class="text-body text-decoration-none hover-underline">
+                                        <span>
+                                                                                            <span class="name level-1">몽키 · D · 루피</span>
+                                                                                                <span class="dash"> - </span>
+                                                <span class="level level-1">
+                                                                                                                                                                                                                <span class='first'>흔함</span>
+                                                </span>
+                                                                                    </span>
+                                    </a>
+                                                                                                                                            </td>
+                                <td class="text-secondary text-end">
+                                    2021.02.02 수정
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td colspan="4">
+                                                                            <a class="me-1 text-decoration-none hover-underline" href="/characters?query=%EB%B0%80%EC%A7%9A%EB%AA%A8%EC%9E%90%ED%95%B4%EC%A0%81%EB%8B%A8">#밀짚모자해적단</a>
+                                                                            <a class="me-1 text-decoration-none hover-underline" href="/characters?query=%ED%95%B4%EC%A0%81">#해적</a>
+                                                                            <a class="me-1 text-decoration-none hover-underline" href="/characters?query=%ED%9D%94%ED%95%A8">#흔함</a>
+                                                                    </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                                                                                            <a href="/deck?characters=1" role="button" class="btn btn-sm btn-outline-success fw-bold">
+                                        <i class="fas fa-plus-circle"></i> 패 짜보기
+                                    </a>
+                                                                                                                                                                                                                                                                                        <button class="btn btn-outline-secondary text-body btn-sm"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#character1Comments">
+                                            <i class="fas fa-comment"></i> 댓글
+                                            <i class="fas fa-caret-down"></i>
+                                            <span class="text-danger">
+                                                (<span id="commentCount1">9</span>)
+                                            </span>
+                                        </button>
+                                </td>
+                                
+                            </tr>
+                        </table>
+
+                        <div id="character1Comments"
+     class="my-2 show comment-collapse-area"
+     data-character-id="1">
+    <div class="text-center my-4">
+        <div class="spinner-border d-none" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <div id="character1CommentListWrapper" class="character-comment-list-wrapper">
+        <div style="border: 2px dodgerblue solid;">
+        <div class="p-2 text-white fw-bold" style="background-color: dodgerblue;">
+            <i class="fas fa-comment"></i> 추천수 TOP 3
+        </div>
+        <table class="table table-striped table-borderless m-0">
+            <tbody>
+                                                                    <tr class="comment-tr-3065">
+            <td class="p-2" colspan="3">
+            <div>
+                <style>
+    .dropdown-toggle-simple::after {
+        content: none;
+    }
+</style>
+<a class="
+    text-decoration-none
+    hover-underline
+    card-link
+    dropdown-toggle-simple
+    fw-bold font-weight-bold
+    text-body"
+   href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    wook</a>
+<div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript:" onclick="if (confirm('로그인이 필요합니다. 로그인 페이지로 이동하시겠습니까?')) location.href = '/login';">
+            <i class="fas fa-envelope"></i> 메시지 보내기
+        </a>
+        <a class="dropdown-item" href="https://ordsearch.net/users/wook/comments/unit" target="_blank">
+        <i class="fas fa-comment"></i> <span class="font-weight-bold">wook</span>님의 유닛댓글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/wook/wagles" target="_blank">
+        <i class="fab fa-rocketchat"></i> <span class="font-weight-bold">wook</span>님의 와글와글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/wook/public-saves" target="_blank">
+        <i class="fas fa-images"></i> <span class="font-weight-bold">wook</span>님의 클리어
+    </a>
+</div>
+                <span class="mx-1 text-secondary">|</span>
+                <span class="text-success">2021-09-21 01:29:32</span>
+                            </div>
+            <div id="commentText3065" class="mt-2 text-break">
+                루피 고무고무자지~~
+            </div>
+            <div class="mt-3">
+            <a href="javascript:"
+           class="btn btn-sm btn-outline-primary"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-thumbs-up"></i> 추천
+            <span>7</span>
+        </a>
+        <a href="javascript:"
+           class="btn btn-sm btn-outline-danger"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-user-slash"></i> 이 유저 차단
+        </a>
+                        <a href="javascript:"
+           class="btn btn-sm btn-outline-secondary text-body comment-move-button"
+           data-comment-id="3065"
+           data-parent-id="">
+            <i class="fas fa-truck-moving"></i> 이동
+        </a>
+    </div>
+                    </td>
+    </tr>
+                                                        <tr class="comment-tr-3064">
+            <td class="p-2" colspan="3">
+            <div>
+                <style>
+    .dropdown-toggle-simple::after {
+        content: none;
+    }
+</style>
+<a class="
+    text-decoration-none
+    hover-underline
+    card-link
+    dropdown-toggle-simple
+    fw-bold font-weight-bold
+    text-body"
+   href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    du_hee</a>
+<div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript:" onclick="if (confirm('로그인이 필요합니다. 로그인 페이지로 이동하시겠습니까?')) location.href = '/login';">
+            <i class="fas fa-envelope"></i> 메시지 보내기
+        </a>
+        <a class="dropdown-item" href="https://ordsearch.net/users/du_hee/comments/unit" target="_blank">
+        <i class="fas fa-comment"></i> <span class="font-weight-bold">du_hee</span>님의 유닛댓글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/du_hee/wagles" target="_blank">
+        <i class="fab fa-rocketchat"></i> <span class="font-weight-bold">du_hee</span>님의 와글와글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/du_hee/public-saves" target="_blank">
+        <i class="fas fa-images"></i> <span class="font-weight-bold">du_hee</span>님의 클리어
+    </a>
+</div>
+                <span class="mx-1 text-secondary">|</span>
+                <span class="text-success">2021-09-21 01:29:16</span>
+                            </div>
+            <div id="commentText3064" class="mt-2 text-break">
+                루피 좋아요
+            </div>
+            <div class="mt-3">
+            <a href="javascript:"
+           class="btn btn-sm btn-outline-primary"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-thumbs-up"></i> 추천
+            <span>2</span>
+        </a>
+        <a href="javascript:"
+           class="btn btn-sm btn-outline-danger"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-user-slash"></i> 이 유저 차단
+        </a>
+                        <a href="javascript:"
+           class="btn btn-sm btn-outline-secondary text-body comment-move-button"
+           data-comment-id="3064"
+           data-parent-id="">
+            <i class="fas fa-truck-moving"></i> 이동
+        </a>
+    </div>
+                    </td>
+    </tr>
+                                                        <tr class="comment-tr-4884">
+            <td class="p-2" colspan="3">
+            <div>
+                <style>
+    .dropdown-toggle-simple::after {
+        content: none;
+    }
+</style>
+<a class="
+    text-decoration-none
+    hover-underline
+    card-link
+    dropdown-toggle-simple
+    fw-bold font-weight-bold
+    text-body"
+   href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    람머스</a>
+<div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript:" onclick="if (confirm('로그인이 필요합니다. 로그인 페이지로 이동하시겠습니까?')) location.href = '/login';">
+            <i class="fas fa-envelope"></i> 메시지 보내기
+        </a>
+        <a class="dropdown-item" href="https://ordsearch.net/users/%EB%9E%8C%EB%A8%B8%EC%8A%A4/comments/unit" target="_blank">
+        <i class="fas fa-comment"></i> <span class="font-weight-bold">람머스</span>님의 유닛댓글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/%EB%9E%8C%EB%A8%B8%EC%8A%A4/wagles" target="_blank">
+        <i class="fab fa-rocketchat"></i> <span class="font-weight-bold">람머스</span>님의 와글와글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/%EB%9E%8C%EB%A8%B8%EC%8A%A4/public-saves" target="_blank">
+        <i class="fas fa-images"></i> <span class="font-weight-bold">람머스</span>님의 클리어
+    </a>
+</div>
+                <span class="mx-1 text-secondary">|</span>
+                <span class="text-success">2022-11-03 18:45:03</span>
+                            </div>
+            <div id="commentText4884" class="mt-2 text-break">
+                오 저장기능 생겼네요! ㅎㅎ 혹시 Ctrl+w 누를때 조로 갯수 올라가는거 미적용되게 해주실 수 있나요?<br />
+w 썼을떄만 올라가게 하고싶은데... 항상 감사드립니다.
+            </div>
+            <div class="mt-3">
+            <a href="javascript:"
+           class="btn btn-sm btn-outline-primary"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-thumbs-up"></i> 추천
+            <span>0</span>
+        </a>
+        <a href="javascript:"
+           class="btn btn-sm btn-outline-danger"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-user-slash"></i> 이 유저 차단
+        </a>
+                        <a href="javascript:"
+           class="btn btn-sm btn-outline-secondary text-body comment-move-button"
+           data-comment-id="4884"
+           data-parent-id="">
+            <i class="fas fa-truck-moving"></i> 이동
+        </a>
+    </div>
+                                                <hr class="my-2">
+                    <div id="replyDiv4886" class="ms-3 ps-3" style="border-left: 2px lightgray solid;">
+                                                    <div>
+                                <style>
+    .dropdown-toggle-simple::after {
+        content: none;
+    }
+</style>
+<a class="
+    text-decoration-none
+    hover-underline
+    card-link
+    dropdown-toggle-simple
+    fw-bold font-weight-bold
+    text-body"
+   href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    admin</a>
+<div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript:" onclick="if (confirm('로그인이 필요합니다. 로그인 페이지로 이동하시겠습니까?')) location.href = '/login';">
+            <i class="fas fa-envelope"></i> 메시지 보내기
+        </a>
+        <a class="dropdown-item" href="https://ordsearch.net/users/admin/comments/unit" target="_blank">
+        <i class="fas fa-comment"></i> <span class="font-weight-bold">admin</span>님의 유닛댓글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/admin/wagles" target="_blank">
+        <i class="fab fa-rocketchat"></i> <span class="font-weight-bold">admin</span>님의 와글와글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/admin/public-saves" target="_blank">
+        <i class="fas fa-images"></i> <span class="font-weight-bold">admin</span>님의 클리어
+    </a>
+</div>
+                                <span class="mx-1 text-secondary">|</span>
+                                <span class="text-success">2022-11-04 01:59:25</span>
+                                                            </div>
+                            <div id="commentText4886" class="mt-2">네네 저장 기능이 추가되었습니다 ㅎㅎ 그리고 Ctrl + w 누를 때 조로 갯수 올라가는 것도 처리해두었습니다. 감사합니다.</div>
+                            <div class="mt-3">
+            <a href="javascript:"
+           class="btn btn-sm btn-outline-primary"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-thumbs-up"></i> 추천
+            <span>1</span>
+        </a>
+        <a href="javascript:"
+           class="btn btn-sm btn-outline-danger"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-user-slash"></i> 이 유저 차단
+        </a>
+                        <a href="javascript:"
+           class="btn btn-sm btn-outline-secondary text-body comment-move-button"
+           data-comment-id="4886"
+           data-parent-id="4884">
+            <i class="fas fa-truck-moving"></i> 이동
+        </a>
+    </div>
+                                            </div>
+                                    </td>
+    </tr>
+                                        </tbody>
+        </table>
+    </div>
+    <hr>
+            <div class="my-3">
+            
+        </div>
+    <div class="normal-comment-wrapper">
+    <div style="justify-items: center;">
+        <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input view-disabled-item-checkbox border-secondary" id="toggleViewDisabledItemCheckbox1">
+            <label class="form-check-label" for="toggleViewDisabledItemCheckbox1">삭제(또는 차단) 내역 포함</label>
+        </div>
+    </div>
+    <table class="table table-sm table-striped">
+        <tbody id="commentsTbody1" class="character-comment-tbody">
+                                                                        <tr id="commentTr5552"
+    class="unit-comment-tr comment-tr-5552 "
+    >
+            <td class="p-2" colspan="3">
+            <div>
+                <style>
+    .dropdown-toggle-simple::after {
+        content: none;
+    }
+</style>
+<a class="
+    text-decoration-none
+    hover-underline
+    card-link
+    dropdown-toggle-simple
+    fw-bold font-weight-bold
+    text-body"
+   href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    vhrtm</a>
+<div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript:" onclick="if (confirm('로그인이 필요합니다. 로그인 페이지로 이동하시겠습니까?')) location.href = '/login';">
+            <i class="fas fa-envelope"></i> 메시지 보내기
+        </a>
+        <a class="dropdown-item" href="https://ordsearch.net/users/vhrtm/comments/unit" target="_blank">
+        <i class="fas fa-comment"></i> <span class="font-weight-bold">vhrtm</span>님의 유닛댓글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/vhrtm/wagles" target="_blank">
+        <i class="fab fa-rocketchat"></i> <span class="font-weight-bold">vhrtm</span>님의 와글와글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/vhrtm/public-saves" target="_blank">
+        <i class="fas fa-images"></i> <span class="font-weight-bold">vhrtm</span>님의 클리어
+    </a>
+</div>
+                                    <span class="mx-1 text-secondary">|</span>
+                    <span style="color: darkgoldenrod">11.081 ver</span>
+                                <span class="mx-1 text-secondary">|</span>
+                <span class="text-success">2023-04-26 20:46:34</span>
+                                                                                    </div>
+            <div id="commentText5552" class="mt-2 text-break">
+                *피
+            </div>
+            <div class="mt-3">
+            <a href="javascript:"
+           class="btn btn-sm btn-outline-primary"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-thumbs-up"></i> 추천
+            <span>0</span>
+        </a>
+        <a href="javascript:"
+           class="btn btn-sm btn-outline-danger"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-user-slash"></i> 이 유저 차단
+        </a>
+                    <a href="javascript:"
+               class="btn btn-sm btn-outline-secondary text-body"
+               onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+                <i class="fas fa-reply fa-rotate-180" style="padding-top: 2px;"></i> 답글
+            </a>
+                </div>
+                    </td>
+    </tr>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <tr id="commentTr4884"
+    class="unit-comment-tr comment-tr-4884 "
+    >
+            <td class="p-2" colspan="3">
+            <div>
+                <style>
+    .dropdown-toggle-simple::after {
+        content: none;
+    }
+</style>
+<a class="
+    text-decoration-none
+    hover-underline
+    card-link
+    dropdown-toggle-simple
+    fw-bold font-weight-bold
+    text-body"
+   href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    람머스</a>
+<div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript:" onclick="if (confirm('로그인이 필요합니다. 로그인 페이지로 이동하시겠습니까?')) location.href = '/login';">
+            <i class="fas fa-envelope"></i> 메시지 보내기
+        </a>
+        <a class="dropdown-item" href="https://ordsearch.net/users/%EB%9E%8C%EB%A8%B8%EC%8A%A4/comments/unit" target="_blank">
+        <i class="fas fa-comment"></i> <span class="font-weight-bold">람머스</span>님의 유닛댓글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/%EB%9E%8C%EB%A8%B8%EC%8A%A4/wagles" target="_blank">
+        <i class="fab fa-rocketchat"></i> <span class="font-weight-bold">람머스</span>님의 와글와글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/%EB%9E%8C%EB%A8%B8%EC%8A%A4/public-saves" target="_blank">
+        <i class="fas fa-images"></i> <span class="font-weight-bold">람머스</span>님의 클리어
+    </a>
+</div>
+                                <span class="mx-1 text-secondary">|</span>
+                <span class="text-success">2022-11-03 18:45:03</span>
+                                                                                    </div>
+            <div id="commentText4884" class="mt-2 text-break">
+                오 저장기능 생겼네요! ㅎㅎ 혹시 Ctrl+w 누를때 조로 갯수 올라가는거 미적용되게 해주실 수 있나요?<br />
+w 썼을떄만 올라가게 하고싶은데... 항상 감사드립니다.
+            </div>
+            <div class="mt-3">
+            <a href="javascript:"
+           class="btn btn-sm btn-outline-primary"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-thumbs-up"></i> 추천
+            <span>0</span>
+        </a>
+        <a href="javascript:"
+           class="btn btn-sm btn-outline-danger"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-user-slash"></i> 이 유저 차단
+        </a>
+                    <a href="javascript:"
+               class="btn btn-sm btn-outline-secondary text-body"
+               onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+                <i class="fas fa-reply fa-rotate-180" style="padding-top: 2px;"></i> 답글
+            </a>
+                </div>
+                                                                    <div class=" deleted-comment "
+                         style=" display: none; ">
+                        <hr class="my-2">
+                        <div id="replyDiv4885" class="ms-3 ps-3 comment-reply" style="border-left: 2px lightgray solid;">
+                                                            <div class="text-center text-secondary">삭제된 답글입니다.</div>
+                                                    </div>
+                    </div>
+                                                        <div class=""
+                         style="">
+                        <hr class="my-2">
+                        <div id="replyDiv4886" class="ms-3 ps-3 comment-reply" style="border-left: 2px lightgray solid;">
+                                                            <div>
+                                    <style>
+    .dropdown-toggle-simple::after {
+        content: none;
+    }
+</style>
+<a class="
+    text-decoration-none
+    hover-underline
+    card-link
+    dropdown-toggle-simple
+    fw-bold font-weight-bold
+    text-body"
+   href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    admin</a>
+<div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript:" onclick="if (confirm('로그인이 필요합니다. 로그인 페이지로 이동하시겠습니까?')) location.href = '/login';">
+            <i class="fas fa-envelope"></i> 메시지 보내기
+        </a>
+        <a class="dropdown-item" href="https://ordsearch.net/users/admin/comments/unit" target="_blank">
+        <i class="fas fa-comment"></i> <span class="font-weight-bold">admin</span>님의 유닛댓글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/admin/wagles" target="_blank">
+        <i class="fab fa-rocketchat"></i> <span class="font-weight-bold">admin</span>님의 와글와글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/admin/public-saves" target="_blank">
+        <i class="fas fa-images"></i> <span class="font-weight-bold">admin</span>님의 클리어
+    </a>
+</div>
+                                                                        <span class="mx-1 text-secondary">|</span>
+                                    <span class="text-success">2022-11-04 01:59:25</span>
+                                                                                                                                                                                        </div>
+                                <div id="commentText4886" class="mt-2">
+                                    네네 저장 기능이 추가되었습니다 ㅎㅎ 그리고 Ctrl + w 누를 때 조로 갯수 올라가는 것도 처리해두었습니다. 감사합니다.
+                                </div>
+                                <div class="mt-3">
+            <a href="javascript:"
+           class="btn btn-sm btn-outline-primary"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-thumbs-up"></i> 추천
+            <span>1</span>
+        </a>
+        <a href="javascript:"
+           class="btn btn-sm btn-outline-danger"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-user-slash"></i> 이 유저 차단
+        </a>
+                </div>
+                                                    </div>
+                    </div>
+                                    </td>
+    </tr>
+                                                                                                                                                                                <tr id="commentTr4789"
+    class="unit-comment-tr comment-tr-4789 "
+    >
+            <td class="p-2" colspan="3">
+            <div>
+                <style>
+    .dropdown-toggle-simple::after {
+        content: none;
+    }
+</style>
+<a class="
+    text-decoration-none
+    hover-underline
+    card-link
+    dropdown-toggle-simple
+    fw-bold font-weight-bold
+    text-body"
+   href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    해적왕</a>
+<div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript:" onclick="if (confirm('로그인이 필요합니다. 로그인 페이지로 이동하시겠습니까?')) location.href = '/login';">
+            <i class="fas fa-envelope"></i> 메시지 보내기
+        </a>
+        <a class="dropdown-item" href="https://ordsearch.net/users/%ED%95%B4%EC%A0%81%EC%99%95/comments/unit" target="_blank">
+        <i class="fas fa-comment"></i> <span class="font-weight-bold">해적왕</span>님의 유닛댓글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/%ED%95%B4%EC%A0%81%EC%99%95/wagles" target="_blank">
+        <i class="fab fa-rocketchat"></i> <span class="font-weight-bold">해적왕</span>님의 와글와글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/%ED%95%B4%EC%A0%81%EC%99%95/public-saves" target="_blank">
+        <i class="fas fa-images"></i> <span class="font-weight-bold">해적왕</span>님의 클리어
+    </a>
+</div>
+                                <span class="mx-1 text-secondary">|</span>
+                <span class="text-success">2022-10-02 23:31:37</span>
+                                                                                    </div>
+            <div id="commentText4789" class="mt-2 text-break">
+                ㄴ 네 알겠습니다. 조만간 적용해둘게요. 감사합니다.
+            </div>
+            <div class="mt-3">
+            <a href="javascript:"
+           class="btn btn-sm btn-outline-primary"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-thumbs-up"></i> 추천
+            <span>0</span>
+        </a>
+        <a href="javascript:"
+           class="btn btn-sm btn-outline-danger"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-user-slash"></i> 이 유저 차단
+        </a>
+                    <a href="javascript:"
+               class="btn btn-sm btn-outline-secondary text-body"
+               onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+                <i class="fas fa-reply fa-rotate-180" style="padding-top: 2px;"></i> 답글
+            </a>
+                </div>
+                    </td>
+    </tr>
+                                                                                                                                                                                <tr id="commentTr4788"
+    class="unit-comment-tr comment-tr-4788 "
+    >
+            <td class="p-2" colspan="3">
+            <div>
+                <style>
+    .dropdown-toggle-simple::after {
+        content: none;
+    }
+</style>
+<a class="
+    text-decoration-none
+    hover-underline
+    card-link
+    dropdown-toggle-simple
+    fw-bold font-weight-bold
+    text-body"
+   href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    람머스</a>
+<div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript:" onclick="if (confirm('로그인이 필요합니다. 로그인 페이지로 이동하시겠습니까?')) location.href = '/login';">
+            <i class="fas fa-envelope"></i> 메시지 보내기
+        </a>
+        <a class="dropdown-item" href="https://ordsearch.net/users/%EB%9E%8C%EB%A8%B8%EC%8A%A4/comments/unit" target="_blank">
+        <i class="fas fa-comment"></i> <span class="font-weight-bold">람머스</span>님의 유닛댓글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/%EB%9E%8C%EB%A8%B8%EC%8A%A4/wagles" target="_blank">
+        <i class="fab fa-rocketchat"></i> <span class="font-weight-bold">람머스</span>님의 와글와글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/%EB%9E%8C%EB%A8%B8%EC%8A%A4/public-saves" target="_blank">
+        <i class="fas fa-images"></i> <span class="font-weight-bold">람머스</span>님의 클리어
+    </a>
+</div>
+                                <span class="mx-1 text-secondary">|</span>
+                <span class="text-success">2022-10-02 23:30:08</span>
+                                                                                    </div>
+            <div id="commentText4788" class="mt-2 text-break">
+                오 좋은 기능 생겼네요? 계산시 기타포함 체크박스 체크해제하고 부족한 재료 표시기능 갯수 설정해놓으면 사이트 새로고침 할때마다 초기화되던데 혹시 고정되게 해주실 수 있을까요?
+            </div>
+            <div class="mt-3">
+            <a href="javascript:"
+           class="btn btn-sm btn-outline-primary"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-thumbs-up"></i> 추천
+            <span>0</span>
+        </a>
+        <a href="javascript:"
+           class="btn btn-sm btn-outline-danger"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-user-slash"></i> 이 유저 차단
+        </a>
+                    <a href="javascript:"
+               class="btn btn-sm btn-outline-secondary text-body"
+               onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+                <i class="fas fa-reply fa-rotate-180" style="padding-top: 2px;"></i> 답글
+            </a>
+                </div>
+                    </td>
+    </tr>
+                                                                                                                                                                                <tr id="commentTr3065"
+    class="unit-comment-tr comment-tr-3065 "
+    >
+            <td class="p-2" colspan="3">
+            <div>
+                <style>
+    .dropdown-toggle-simple::after {
+        content: none;
+    }
+</style>
+<a class="
+    text-decoration-none
+    hover-underline
+    card-link
+    dropdown-toggle-simple
+    fw-bold font-weight-bold
+    text-body"
+   href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    wook</a>
+<div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript:" onclick="if (confirm('로그인이 필요합니다. 로그인 페이지로 이동하시겠습니까?')) location.href = '/login';">
+            <i class="fas fa-envelope"></i> 메시지 보내기
+        </a>
+        <a class="dropdown-item" href="https://ordsearch.net/users/wook/comments/unit" target="_blank">
+        <i class="fas fa-comment"></i> <span class="font-weight-bold">wook</span>님의 유닛댓글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/wook/wagles" target="_blank">
+        <i class="fab fa-rocketchat"></i> <span class="font-weight-bold">wook</span>님의 와글와글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/wook/public-saves" target="_blank">
+        <i class="fas fa-images"></i> <span class="font-weight-bold">wook</span>님의 클리어
+    </a>
+</div>
+                                <span class="mx-1 text-secondary">|</span>
+                <span class="text-success">2021-09-21 01:29:32</span>
+                                                                                    </div>
+            <div id="commentText3065" class="mt-2 text-break">
+                루피 고무고무**~~
+            </div>
+            <div class="mt-3">
+            <a href="javascript:"
+           class="btn btn-sm btn-outline-primary"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-thumbs-up"></i> 추천
+            <span>7</span>
+        </a>
+        <a href="javascript:"
+           class="btn btn-sm btn-outline-danger"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-user-slash"></i> 이 유저 차단
+        </a>
+                    <a href="javascript:"
+               class="btn btn-sm btn-outline-secondary text-body"
+               onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+                <i class="fas fa-reply fa-rotate-180" style="padding-top: 2px;"></i> 답글
+            </a>
+                </div>
+                    </td>
+    </tr>
+                                                                                                                                                                                <tr id="commentTr3064"
+    class="unit-comment-tr comment-tr-3064 "
+    >
+            <td class="p-2" colspan="3">
+            <div>
+                <style>
+    .dropdown-toggle-simple::after {
+        content: none;
+    }
+</style>
+<a class="
+    text-decoration-none
+    hover-underline
+    card-link
+    dropdown-toggle-simple
+    fw-bold font-weight-bold
+    text-body"
+   href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    du_hee</a>
+<div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript:" onclick="if (confirm('로그인이 필요합니다. 로그인 페이지로 이동하시겠습니까?')) location.href = '/login';">
+            <i class="fas fa-envelope"></i> 메시지 보내기
+        </a>
+        <a class="dropdown-item" href="https://ordsearch.net/users/du_hee/comments/unit" target="_blank">
+        <i class="fas fa-comment"></i> <span class="font-weight-bold">du_hee</span>님의 유닛댓글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/du_hee/wagles" target="_blank">
+        <i class="fab fa-rocketchat"></i> <span class="font-weight-bold">du_hee</span>님의 와글와글
+    </a>
+    <a class="dropdown-item" href="https://ordsearch.net/users/du_hee/public-saves" target="_blank">
+        <i class="fas fa-images"></i> <span class="font-weight-bold">du_hee</span>님의 클리어
+    </a>
+</div>
+                                <span class="mx-1 text-secondary">|</span>
+                <span class="text-success">2021-09-21 01:29:16</span>
+                                                                                    </div>
+            <div id="commentText3064" class="mt-2 text-break">
+                루피 좋아요
+            </div>
+            <div class="mt-3">
+            <a href="javascript:"
+           class="btn btn-sm btn-outline-primary"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-thumbs-up"></i> 추천
+            <span>2</span>
+        </a>
+        <a href="javascript:"
+           class="btn btn-sm btn-outline-danger"
+           onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+            <i class="fas fa-user-slash"></i> 이 유저 차단
+        </a>
+                    <a href="javascript:"
+               class="btn btn-sm btn-outline-secondary text-body"
+               onclick="if (confirm('로그인 후 가능합니다. 로그인 하시겠어요?')) location.href='/login?redirect=https://ordsearch.net/characters/1' ">
+                <i class="fas fa-reply fa-rotate-180" style="padding-top: 2px;"></i> 답글
+            </a>
+                </div>
+                    </td>
+    </tr>
+                                                                                                                                                                                <tr id="commentTr1565"
+    class="unit-comment-tr comment-tr-1565  deleted-comment "
+     style="display: none;" >
+            <td class="p-2 text-center text-secondary"
+            colspan="3">삭제된 댓글입니다.</td>
+    </tr>
+                                                                                                                                            </tbody>
+    </table>
+</div>
+    </div>
+    <hr>
+    <div class="text-center mb-3">
+                    <a href="/login?redirect=https://ordsearch.net/characters/1">로그인</a> 하시면 댓글을 작성할 수 있습니다.
+            </div>
+</div>
+
+                                                                                            </div>
+                                                                                                                
+
+                                    </div>
+        <div class="col-4 px-1">
+                            <div id="videoAdEl"></div>
+                                                                                                            <div>
+                    <img src="https://ordsearch.b-cdn.net/images/units/onepiece/8.jpg?20200709030224" style="width: 100%">
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="text-center p-2" colspan="2">
+                                    <p class="mb-1 mt-1 fw-bold h6">몽키 D. 루피</p>
+                                    <p class="mb-0">MONKEY D. LUFFY</p>
+                                    <p class="mb-0">モンキー ・ D ・ ルフィ</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center" width="23%">첫 등장</td>
+                                <td class="ps-2">
+                                                                            <p class="mb-0">단행본 1권 / 1화</p>
+                                        <p class="mb-0">애니메이션 1화</p>
+                                                                    </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">소속</td>
+                                <td class="ps-2">밀짚모자 해적단</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">능력</td>
+                                <td class="ps-2">초인계 고무고무 열매</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">메모</td>
+                                <td class="ps-2">-</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center py-2" colspan="2">
+                                    <a href="/onepiece/characters">모든 유닛 원작 정보 보기</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                        <div class="border">
+                <div class="m-3 fw-bold text-center">
+    <i class="fas fa-fire"></i> 최근 7일간 인기검색어
+</div>
+<div class="row">
+    <ol class="col list-unstyled ms-4 border-end">
+                            <li class="mb-1  ms-2 ">
+            <span>1. </span>
+            <a class="text-decoration-none hover-underline
+                text-body-emphasis fw-bold
+               "
+               href="https://ordsearch.net/search?query=%EC%A1%B0%EB%A1%9C&amp;sc=uni&amp;w=popular.search"
+               title="조로">
+                조로</a>
+             <i class="fas fa-exclamation-circle text-danger"></i>         </li>
+                            <li class="mb-1  ms-2 ">
+            <span>2. </span>
+            <a class="text-decoration-none hover-underline
+                text-body-emphasis fw-bold
+               "
+               href="https://ordsearch.net/search?query=%EC%83%81%EB%94%94&amp;sc=uni&amp;w=popular.search"
+               title="상디">
+                상디</a>
+             <i class="fas fa-exclamation-circle text-danger"></i>         </li>
+                            <li class="mb-1  ms-2 ">
+            <span>3. </span>
+            <a class="text-decoration-none hover-underline
+                text-body-emphasis fw-bold
+               "
+               href="https://ordsearch.net/search?query=%EB%A5%98%EB%A7%88&amp;sc=uni&amp;w=popular.search"
+               title="류마">
+                류마</a>
+             <i class="fas fa-exclamation-circle text-danger"></i>         </li>
+                            <li class="mb-1  ms-2 ">
+            <span>4. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%EB%A1%9C%EC%9A%B0&amp;sc=uni&amp;w=popular.search"
+               title="로우">
+                로우</a>
+                    </li>
+                            <li class="mb-1  ms-2 ">
+            <span>5. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%EC%95%84%EC%B9%B4%EC%9D%B4%EB%88%84&amp;sc=uni&amp;w=popular.search"
+               title="아카이누">
+                아카이누</a>
+                    </li>
+                            <li class="mb-1  ms-2 ">
+            <span>6. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%EC%97%90%EC%9D%B4%EC%8A%A4&amp;sc=uni&amp;w=popular.search"
+               title="에이스">
+                에이스</a>
+                    </li>
+                            <li class="mb-1  ms-2 ">
+            <span>7. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%EC%82%AC%EB%B3%B4&amp;sc=uni&amp;w=popular.search"
+               title="사보">
+                사보</a>
+                    </li>
+                            <li class="mb-1  ms-2 ">
+            <span>8. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%EB%A3%A8%ED%94%BC&amp;sc=uni&amp;w=popular.search"
+               title="루피">
+                루피</a>
+                    </li>
+                            <li class="mb-1  ms-2 ">
+            <span>9. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%EA%B1%B0%ED%94%84&amp;sc=uni&amp;w=popular.search"
+               title="거프">
+                거프</a>
+                    </li>
+                            <li class="mb-1 ">
+            <span>10. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%EC%83%B9%ED%81%AC%EC%8A%A4&amp;sc=uni&amp;w=popular.search"
+               title="샹크스">
+                샹크스</a>
+                    </li>
+                    </ol><ol class="col list-unstyled ms-4 ps-4">        <li class="mb-1 ">
+            <span>11. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%ED%95%B8%EC%BD%95&amp;sc=uni&amp;w=popular.search"
+               title="핸콕">
+                핸콕</a>
+                    </li>
+                            <li class="mb-1 ">
+            <span>12. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%EB%A7%88%EB%A5%B4%EC%BD%94&amp;sc=uni&amp;w=popular.search"
+               title="마르코">
+                마르코</a>
+                    </li>
+                            <li class="mb-1 ">
+            <span>13. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%EC%A7%95%EB%B2%A0&amp;sc=uni&amp;w=popular.search"
+               title="징베">
+                징베</a>
+                    </li>
+                            <li class="mb-1 ">
+            <span>14. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%ED%82%A4%EB%93%9C&amp;sc=uni&amp;w=popular.search"
+               title="키드">
+                키드</a>
+                    </li>
+                            <li class="mb-1 ">
+            <span>15. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%ED%85%8C%EC%A1%B0%EB%A1%9C&amp;sc=uni&amp;w=popular.search"
+               title="테조로">
+                테조로</a>
+                    </li>
+                            <li class="mb-1 ">
+            <span>16. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%EC%8B%9C%EB%A5%98&amp;sc=uni&amp;w=popular.search"
+               title="시류">
+                시류</a>
+                    </li>
+                            <li class="mb-1 ">
+            <span>17. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%EB%AF%B8%ED%98%B8%ED%81%AC&amp;sc=uni&amp;w=popular.search"
+               title="미호크">
+                미호크</a>
+                    </li>
+                            <li class="mb-1 ">
+            <span>18. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%ED%82%B9&amp;sc=uni&amp;w=popular.search"
+               title="킹">
+                킹</a>
+                    </li>
+                            <li class="mb-1 ">
+            <span>19. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%ED%82%AC%EB%9F%AC&amp;sc=uni&amp;w=popular.search"
+               title="킬러">
+                킬러</a>
+                    </li>
+                            <li class="mb-1 ">
+            <span>20. </span>
+            <a class="text-decoration-none hover-underline
+                text-body
+               "
+               href="https://ordsearch.net/search?query=%EC%8B%9C%ED%82%A4&amp;sc=uni&amp;w=popular.search"
+               title="시키">
+                시키</a>
+                    </li>
+            </ol>
+</div>
+            </div>
+        </div>
+    </div>
+    <div class="pb-3" style="justify-items: center;">
+        <div style="max-width:550px;">
+    <form action="https://ordsearch.net/search">
+        <input type="hidden" name="w" value="search.search-bottom">
+                    <input type="hidden" name="sc" value="uni">
+                <div class="input-group">
+            <input class="form-control border-primary"
+                   type="search"
+                   name="query"
+                   maxlength="30"
+                   value=""
+                   style="border-width:2px;width:500px;height:45px;">
+            <button class="btn btn-primary btn" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </form>
+    <div class="my-2 guide-query">
+                                            <a href="https://ordsearch.net/search?query=%ED%85%8C%EC%A1%B0%EB%A1%9C&amp;sc=uni&amp;w=guide.search-bottom"
+               class="text-decoration-none hover-underline">테조로</a>
+                                 <span class="mx-1" style="color:#c9c9c9;">|</span>             <a href="https://ordsearch.net/search?query=%EB%B8%8C%EB%A5%84%EB%A0%88&amp;sc=uni&amp;w=guide.search-bottom"
+               class="text-decoration-none hover-underline">브륄레</a>
+                                 <span class="mx-1" style="color:#c9c9c9;">|</span>             <a href="https://ordsearch.net/search?query=%EB%B6%88%EB%A6%BF&amp;sc=uni&amp;w=guide.search-bottom"
+               class="text-decoration-none hover-underline">불릿</a>
+                                 <span class="mx-1" style="color:#c9c9c9;">|</span>             <a href="https://ordsearch.net/search?query=%EC%83%8C%EC%A6%88&amp;sc=uni&amp;w=guide.search-bottom"
+               class="text-decoration-none hover-underline">샌즈</a>
+                                 <span class="mx-1" style="color:#c9c9c9;">|</span>             <a href="https://ordsearch.net/search?query=%EB%8B%A8%EC%9D%BC&amp;sc=uni&amp;w=guide.search-bottom"
+               class="text-decoration-none hover-underline">단일</a>
+                                 <span class="mx-1" style="color:#c9c9c9;">|</span>             <a href="https://ordsearch.net/search?query=%EB%81%9D%EB%94%9C&amp;sc=uni&amp;w=guide.search-bottom"
+               class="text-decoration-none hover-underline">끝딜</a>
+                                 <span class="mx-1" style="color:#c9c9c9;">|</span>             <a href="https://ordsearch.net/search?query=%EB%B0%A9%EA%B9%8D&amp;sc=uni&amp;w=guide.search-bottom"
+               class="text-decoration-none hover-underline">방깍</a>
+                                 <span class="mx-1" style="color:#c9c9c9;">|</span>             <a href="https://ordsearch.net/search?query=%EC%8A%A4%ED%84%B4&amp;sc=uni&amp;w=guide.search-bottom"
+               class="text-decoration-none hover-underline">스턴</a>
+                         </div>
+</div>
+    </div>
+    <style type="text/css">
+        .orgchart .node {
+            padding: 0;
+            border: 0;
+        }
+        .orgchart .node .title {
+            background-color: #fff;
+            color: #000;
+            width: 53px;
+            height: 42px;
+            border-radius: 0;
+        }
+    </style>
+
+    <div class="modal fade hands-modal" id="characterHighHandsModal">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="border-bottom pt-3">
+                <ol>
+                    <li>이 유닛의 상위조합 리스트 입니다. (<span class="font-weight-bold" style="color: #d59700">특별함</span> 이상부터 제공)</li>
+                    <li>오른쪽 상단 <i class="fa fa-plus-circle text-warning bg-dark"></i> 마크가 있는 유닛은 상위조합이 더 있다는 의미 입니다.</li>
+                    <li>유닛에 마우스를 올리면 나오는 <span class="text-success font-weight-bold">녹색화살표</span>를 누르면 방향에 맞는 유닛을 보거나 숨길 수 있습니다.</li>
+                    <li><span class="text-danger font-weight-bold">빨간색 격자 부분</span>을 클릭하고 드래그 하면 조합식을 움직일 수 있습니다.</li>
+                    <li>화살표가 아닌 유닛 사진을 클릭하면 해당 유닛의 상세 페이지로 넘어갑니다.</li>
+                </ol>
+            </div>
+            <div class="modal-body text-center">
+                <div class="spinner-border text-danger" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="modal fade hands-modal" id="characterLowHandsModal">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-bold"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="border-bottom pt-3 text-left">
+                <ol>
+                    <li>이 유닛의 하위조합 리스트 입니다. (<span class="font-weight-bold" style="color: #d59700">특별함</span> 이상부터 제공)</li>
+                    <li>오른쪽 상단 <i class="fa fa-plus-circle text-warning bg-dark"></i> 마크가 있는 유닛은 하위조합이 더 있다는 의미 입니다.</li>
+                    <li>유닛에 마우스를 올리면 나오는 <span class="text-success font-weight-bold">녹색화살표</span>를 누르면 방향에 맞는 유닛을 보거나 숨길 수 있습니다.</li>
+                    <li><span class="text-danger font-weight-bold">빨간색 격자 부분</span>을 클릭하고 드래그 하면 조합식을 움직일 수 있습니다.</li>
+                    <li>화살표가 아닌 유닛 사진을 클릭하면 해당 유닛의 상세 페이지로 넘어갑니다.</li>
+                </ol>
+                <div class="text-center mb-3">
+                    <button id="allMaterialVisibleButton" class="btn btn-primary">
+                        <i class="bi bi-arrows-expand"></i>
+                        하위유닛 전체 펼치기
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body text-center">
+                <div class="spinner-border text-danger" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="replyModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">답글달기</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="comment-reply-form">
+                <input type="hidden" name="parentId" value="">
+                <input type="hidden" name="characterId" value="">
+                <input type="hidden" name="humor_id" value="">
+                <input type="hidden" name="post_id" value="">
+                <div class="modal-body">
+                    <div id="originCommentText" class="p-2 border rounded"></div>
+                    <div class="mb-3">
+                        <textarea class="form-control mt-3" name="comment" rows="5" required></textarea>
+                    </div>
+                    <select class="form-select form-select-sm ord-version-select">
+                        <option value="">원랜디 버전 (선택)</option>
+                                                    <option value="2.111">2.111</option>
+                                                    <option value="2.200">2.200</option>
+                                                    <option value="2.202">2.202</option>
+                                                    <option value="2.211">2.211</option>
+                                                    <option value="2.221">2.221</option>
+                                                <option value="directInput">직접입력</option>
+                    </select>
+                    <input type="text"
+                           name="ordVersion"
+                           class="form-control form-control-sm mt-1 ord-version-input"
+                           placeholder="원랜디 버전 (선택)"
+                           readonly>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+                    <button class="btn btn-primary" type="submit">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+                        답글달기
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+                </div>
+                                        <div class="my-3" style="justify-items: center;">
+                    <div id="billboardAdEl"></div>
+                </div>
+                        <hr class="mt-5">
+            <div class="mb-5 mx-auto" style="width:1130px;">
+        <div class="text-end">
+        <a class="fw-bold text-decoration-none hover-underline" href="https://ordsearch.net/policies/privacy" target="_blank">개인정보처리방침</a>
+        <span class="mx-1" style="color:darkgray">|</span>
+        <a class="text-decoration-none hover-underline" href="/">홈으로</a>
+        <span class="mx-1" style="color:darkgray">|</span>
+        <a class="text-decoration-none hover-underline" href="https://ordr.co.kr" target="_blank">디스코드 채널</a>
+        <span class="mx-1" style="color:darkgray">|</span>
+        <a class="text-decoration-none hover-underline" href="//cafe.naver.com/clanopcr" target="_blank">원랜디카페</a>
+        <span class="ml-1 mr-1" style="color:darkgray">|</span>
+        <a class="text-decoration-none hover-underline" href="//weingchicken.com/category/%EC%9B%90%EB%9E%9C%EB%94%94/%EC%BA%90%EB%A6%AD%ED%84%B0%20%EA%B2%80%EC%83%89%EA%B8%B0"
+           target="_blank">블로그</a>
+        <span class="ml-1 mr-1" style="color:darkgray">|</span>
+        <a class="text-decoration-none hover-underline" href="mailto:weingchicken@gmail.com">메일문의</a>
+    </div>
+    <div class="mt-3 text-end text-body">
+        <b><i class="fas fa-skull"></i> 원랜디 캐릭터 검색기</b>
+    </div>
+</div>
+        </div>
+        <div class="modal fade" id="userMessageModal" tabindex="-1" aria-labelledby="userMessageModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="userMessageModalLabel">
+                    <i class="fas fa-envelope"></i> 메시지 보내기
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="https://ordsearch.net/messages" method="post">
+                <input type="hidden" name="_token" value="RokZmQOGwGFvC7nm7Otndwni3Qr4WmEkiM1QN0Qb" autocomplete="off">                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="messageToUserInput" class="col-form-label">받는 사람</label>
+                        <input type="text" class="form-control" id="messageToUserInput" name="messageToUser" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="messageContentArea" class="col-form-label">내용</label>
+                        <textarea class="form-control" id="messageContentArea" name="messageContent" required rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+                        보내기
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+        <div class="position-fixed top-50 start-50 translate-middle" style="min-width: 380px">
+    <div id="globalToastMemo" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000" data-autohide="false">
+        <div class="toast-header">
+            <img src="/images/ordsearch_og.png" class="rounded me-2" alt="ordsearch-icon" style="width: 20px;">
+            <strong class="mr-auto">MEMO</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            <small>브라우저 내에서만 저장되는 간이 메모입니다.<br>(<b>ESC</b> 로 닫기 가능)</small>
+            <textarea rows="10" class="form-control mt-2" style="font-size: .9rem;"></textarea>
+        </div>
+    </div>
+</div>
+        <script src="/js/lib/bootstrap-5.3.7.bundle.min.js"></script>
+        <script type="text/javascript" src="/js/app2.js?id=f3bbf4961439f142b11c"></script>
+        <script src="/js/lib/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="/js/lib/jquery.orgchart.min.js"></script>
+    <script type="text/javascript" src="/js/character/view.js?id=f5ddfab497b638823337"></script>
+    <script type="text/javascript" src="/js/character/view2.js?id=a2bcbfad80d7b17e102c"></script>
+    </body>
+</html>

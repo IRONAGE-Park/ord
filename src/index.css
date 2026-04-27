@@ -1,0 +1,149 @@
+:root {
+  font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, -apple-system,
+    sans-serif;
+  font-size: 14px;
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --bg-muted: #f6f8fa;
+  --border: #d0d7de;
+  --text: #1f2328;
+  --text-muted: #656d76;
+  --primary: #0d6efd;
+  --primary-text: #ffffff;
+  --success: #198754;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --info: #0dcaf0;
+  --hover: #eef2f6;
+  --selected: #fff3cd;
+  --row-hover: rgba(13, 110, 253, 0.08);
+}
+
+[data-theme='dark'] {
+  --bg: #0d1117;
+  --bg-muted: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-muted: #8d96a0;
+  --hover: #1f242c;
+  --selected: #3d2e00;
+  --row-hover: rgba(13, 110, 253, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.4;
+  transition: background 0.1s, border-color 0.1s;
+}
+button:hover:not(:disabled) {
+  background: var(--hover);
+}
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+button.primary {
+  background: var(--primary);
+  color: var(--primary-text);
+  border-color: var(--primary);
+}
+button.primary:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+button.success {
+  background: var(--success);
+  color: #fff;
+  border-color: var(--success);
+}
+button.danger {
+  background: var(--danger);
+  color: #fff;
+  border-color: var(--danger);
+}
+button.warning {
+  background: var(--warning);
+  color: #1f2328;
+  border-color: var(--warning);
+}
+button.info {
+  background: var(--info);
+  color: #1f2328;
+  border-color: var(--info);
+}
+button.icon {
+  padding: 4px 6px;
+}
+button.outline-primary {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+button.outline-primary:hover:not(:disabled) {
+  background: var(--primary);
+  color: #fff;
+}
+button.outline-success {
+  border-color: var(--success);
+  color: var(--success);
+}
+button.outline-success:hover:not(:disabled) {
+  background: var(--success);
+  color: #fff;
+}
+button.outline-danger {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+button.outline-danger:hover:not(:disabled) {
+  background: var(--danger);
+  color: #fff;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+input[type='number'],
+input[type='text'] {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
