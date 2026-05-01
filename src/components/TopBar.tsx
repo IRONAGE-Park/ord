@@ -69,9 +69,9 @@ export function TopBar() {
       </h1>
       <div className="hotkey-legend">
         <div>
-          <b>마우스</b> · 좌클릭 = 흔함이면 +1 / 그 외는 조합 시도{' '}
+          <b>마우스</b> · 좌클릭 = +1{' '}
           <span className="sep">·</span> 우클릭 = -1{' '}
-          <span className="sep">·</span> Shift+좌클릭 = 무조건 +1{' '}
+          <span className="sep">·</span> 비-흔함 행의 <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+좌클릭 = 조합 시도{' '}
           <span className="sep">·</span> 가운데 클릭 = 정보 페이지
         </div>
         <div style={{ marginTop: 4 }}>
@@ -85,8 +85,8 @@ export function TopBar() {
         </div>
         <div style={{ marginTop: 4, color: 'var(--text-muted)' }}>
           (검색 팔레트 안: <kbd>↑</kbd><kbd>↓</kbd> 이동 · <kbd>Enter</kbd> 추가/조합 ·{' '}
-          <kbd>Shift</kbd>+<kbd>Enter</kbd> -1 · <kbd>?</kbd> 조합 트리 ·{' '}
-          <kbd>Esc</kbd> 닫기)
+          <kbd>Alt</kbd>+<kbd>Enter</kbd> 직접 +1 · <kbd>Shift</kbd>+<kbd>Enter</kbd> -1 ·{' '}
+          <kbd>?</kbd> 조합 트리 · <kbd>Esc</kbd> 닫기)
         </div>
         <div style={{ marginTop: 4 }}>
           <b>흔함 단축키</b> ·{' '}

@@ -30,6 +30,12 @@ export const PRIMARY_GRADE_LEVELS = [1, 3, 4, 5, 6, 8, 10, 11, 15];
 // 보조(접힘) 컬럼 — 펼치면 표시
 export const SECONDARY_GRADE_LEVELS = [2, 7, 9, 12, 14, 16, 18, 19, 20, 22];
 
+export const LEFT_PANEL_GRADE_LEVELS = [1, 2];
+export const CENTER_GRADE_LEVELS = [
+  ...PRIMARY_GRADE_LEVELS.filter(level => !LEFT_PANEL_GRADE_LEVELS.includes(level)),
+  ...SECONDARY_GRADE_LEVELS.filter(level => !LEFT_PANEL_GRADE_LEVELS.includes(level)),
+];
+
 // 필터 정의 (라벨 + 약칭). 원본 페이지와 동일한 정렬 순서.
 export const FILTER_OPTIONS: { key: FilterKey; label: string; alias?: string }[] = [
   { key: 'all', label: '전체' },

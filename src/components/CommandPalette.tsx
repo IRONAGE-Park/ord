@@ -10,6 +10,12 @@ const MAX_RESULTS = 12;
 
 export function CommandPalette() {
   const open = useApp(s => s.commandPaletteOpen);
+
+  if (!open) return null;
+  return <CommandPaletteDialog />;
+}
+
+function CommandPaletteDialog() {
   const close = useApp(s => s.closeCommandPalette);
   const deck = useApp(s => s.deck);
   const add = useApp(s => s.add);
@@ -23,26 +29,14 @@ export function CommandPalette() {
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
 
-  // 열릴 때마다 초기화 + 포커스
+  // 열릴 때마다 새로 마운트되므로 포커스만 맞춰준다.
   useEffect(() => {
-    if (open) {
-      setQuery('');
-      setHighlighted(0);
-      requestAnimationFrame(() => {
-        inputRef.current?.focus();
-      });
-    }
-  }, [open]);
+    requestAnimationFrame(() => {
+      inputRef.current?.focus();
+    });
+  }, []);
 
-  const matches = useMemo(
-    () => (open ? findMatches(query, MAX_RESULTS) : []),
-    [open, query]
-  );
-
-  // 결과가 바뀌면 첫 항목으로 reset
-  useEffect(() => {
-    setHighlighted(0);
-  }, [query]);
+  const matches = useMemo(() => findMatches(query, MAX_RESULTS), [query]);
 
   // 활성 항목이 보이도록 스크롤
   useEffect(() => {
@@ -68,10 +62,16 @@ export function CommandPalette() {
     }
   };
 
+  const runDirectAdd = (unit: Unit) => {
+    add(unit.id, 1);
+  };
+
   const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
-      setHighlighted(h => Math.min(matches.length - 1, h + 1));
+      setHighlighted(h =>
+        matches.length === 0 ? 0 : Math.min(matches.length - 1, h + 1)
+      );
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       setHighlighted(h => Math.max(0, h - 1));
@@ -81,6 +81,8 @@ export function CommandPalette() {
       e.preventDefault();
       if (e.shiftKey) {
         remove(u.id, 1);
+      } else if (e.altKey) {
+        runDirectAdd(u);
       } else {
         runPrimary(u);
       }
@@ -96,8 +98,6 @@ export function CommandPalette() {
     }
   };
 
-  if (!open) return null;
-
   return (
     <div className="cmdk-backdrop" onClick={close} role="dialog" aria-modal>
       <div className="cmdk-panel" onClick={e => e.stopPropagation()}>
@@ -109,7 +109,10 @@ export function CommandPalette() {
             ref={inputRef}
             className="cmdk-input"
             value={query}
-            onChange={e => setQuery(e.target.value)}
+            onChange={e => {
+              setQuery(e.target.value);
+              setHighlighted(0);
+            }}
             onKeyDown={onKeyDown}
             placeholder="유닛 이름 검색…"
             autoComplete="off"
@@ -163,7 +166,7 @@ export function CommandPalette() {
                     </span>
                   )}
                   <span className="cmdk-action">
-                    {isCommon || !canCombine ? '+1' : '조합'}
+                    {isCommon || !canCombine ? '+1' : '조합·+1'}
                   </span>
                 </li>
               );
@@ -184,6 +187,9 @@ export function CommandPalette() {
           </span>
           <span>
             <kbd>Enter</kbd> 추가/조합
+          </span>
+          <span>
+            <kbd>Alt</kbd>+<kbd>Enter</kbd> 직접 +1
           </span>
           <span>
             <kbd>Shift</kbd>+<kbd>Enter</kbd> -1

@@ -51,21 +51,23 @@ export function CandidatesModal() {
   const [sort, setSort] = useState<SortKey>('deficit-asc');
   const [maxRows, setMaxRows] = useState(50);
 
-  // 모드 전환 시 어울리는 정렬·필터로 자동 조정
-  useEffect(() => {
-    if (mode === 'commons') {
+  const applyModePreset = (nextMode: Mode) => {
+    setMode(nextMode);
+    if (nextMode === 'commons') {
       setSort('commons-used-desc');
       setOnlyCommonsBlocked(true);
       setOnlyZeroDeficit(false);
-    } else if (mode === 'synergy') {
+      return;
+    }
+    if (nextMode === 'synergy') {
       setSort('recommend-desc');
       setOnlyCommonsBlocked(false);
       setOnlyZeroDeficit(false);
-    } else {
-      setSort('deficit-asc');
-      setOnlyCommonsBlocked(false);
+      return;
     }
-  }, [mode]);
+    setSort('deficit-asc');
+    setOnlyCommonsBlocked(false);
+  };
 
   useEffect(() => {
     if (!open) return;
@@ -258,20 +260,20 @@ export function CandidatesModal() {
           <div className="mode-tabs">
             <button
               className={mode === 'general' ? 'mode-tab active' : 'mode-tab'}
-              onClick={() => setMode('general')}
+              onClick={() => applyModePreset('general')}
             >
               일반
             </button>
             <button
               className={mode === 'commons' ? 'mode-tab active' : 'mode-tab'}
-              onClick={() => setMode('commons')}
+              onClick={() => applyModePreset('commons')}
               title="현재 흔함을 가장 잘 쓰는 후보"
             >
               🌾 흔함 효율
             </button>
             <button
               className={mode === 'synergy' ? 'mode-tab active' : 'mode-tab'}
-              onClick={() => setMode('synergy')}
+              onClick={() => applyModePreset('synergy')}
               title="덱 시너지가 잘 맞는 후보"
             >
               🔗 시너지

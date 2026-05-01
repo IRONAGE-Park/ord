@@ -2,6 +2,8 @@
   max-width: 1900px;
   margin: 0 auto;
   padding: 0 12px 32px;
+  display: flex;
+  flex-direction: column;
 }
 
 .topbar {
@@ -318,15 +320,25 @@
   margin-right: auto;
 }
 
-/* ─── main content (사이드바 영향 없이 전체 폭 사용) ─── */
-.main-content {
+/* ─── workspace layout ─── */
+.workspace-shell {
   margin-top: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
 }
 
-/* ─── 사이드바 (fixed overlay) ─── */
+/* ─── main content ─── */
+.main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ─── 좌측 패널 ─── */
 .sidebar {
-  position: fixed;
-  z-index: 200;
+  position: sticky;
+  top: 12px;
   background: var(--bg-muted);
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -334,30 +346,18 @@
   flex-direction: column;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-}
-.sidebar-left {
-  top: 12px;
-  bottom: 12px;
-  left: 12px;
-}
-.sidebar-right {
-  top: 12px;
-  bottom: 12px;
-  right: 12px;
-}
-.sidebar-bottom {
-  left: 12px;
-  right: 12px;
-  bottom: 12px;
+  max-height: calc(100vh - 24px);
+  flex: 0 0 auto;
 }
 [data-theme='dark'] .sidebar {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
 }
 
-/* ─── 접힌 사이드바 (얇은 탭) ─── */
+/* ─── 접힌 좌측 패널 탭 ─── */
 .sidebar-tab {
-  position: fixed;
-  z-index: 200;
+  position: sticky;
+  top: 12px;
+  align-self: flex-start;
   background: var(--primary);
   color: #fff;
   border: 1px solid var(--primary);
@@ -369,39 +369,16 @@
   box-shadow: 0 4px 16px rgba(13, 110, 253, 0.32);
   white-space: nowrap;
   letter-spacing: 0.04em;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }
 .sidebar-tab:hover {
   filter: brightness(1.1);
   background: var(--primary);
 }
-.sidebar-tab-left {
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-}
-.sidebar-tab-right {
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-}
-.sidebar-tab-bottom {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
 
 .sidebar-collapse-btn {
-  margin-left: 4px;
+  margin-left: auto;
 }
 .sidebar-header {
   display: flex;
@@ -417,38 +394,21 @@
 .sidebar-title {
   font-weight: 600;
 }
-.sidebar-pos-buttons {
-  margin-left: auto;
-  display: flex;
-  gap: 2px;
-}
-.sidebar-pos-buttons button {
-  padding: 2px 6px;
-  font-size: 12px;
-  min-width: 26px;
-}
-.sidebar-pos-buttons button.active {
-  background: var(--primary);
-  color: #fff;
-  border-color: var(--primary);
-}
 .sidebar-content {
-  flex: 1;
+  flex: 1 1 auto;
   overflow: auto;
   padding: 8px;
-}
-.sidebar-content-vertical {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-.sidebar-content-horizontal {
-  display: grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(220px, 1fr) minmax(220px, 1fr);
-  gap: 12px;
-  align-items: start;
+.sidebar-section {
+  min-width: 0;
 }
-.sidebar-section-commons {
+.sidebar-section-grades {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   min-width: 0;
 }
 
@@ -571,16 +531,17 @@
 
 /* ─── 등급 그리드 ─── */
 .grade-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  min-width: 0;
 }
 .grade-row {
   display: grid;
-  grid-template-columns: repeat(9, minmax(220px, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px, 1fr);
   gap: 6px;
   overflow-x: auto;
   padding-bottom: 6px;
+  align-items: start;
+  min-width: 0;
 }
 .grade-col {
   border: 1px solid var(--border);
@@ -840,7 +801,6 @@
 .unit-info-link,
 .unit-tree-button {
   flex-shrink: 0;
-  width: 20px;
   height: 20px;
   display: inline-flex;
   align-items: center;
@@ -854,6 +814,10 @@
   opacity: 0;
   transition: opacity 0.1s, background 0.1s;
   padding: 0;
+}
+.unit-info-link,
+.unit-tree-button {
+  width: 20px;
 }
 .unit-row:hover .unit-info-link,
 .unit-row:hover .unit-tree-button {
@@ -878,6 +842,25 @@
   font-size: 11px;
   color: var(--text-muted);
   border-top: 1px solid var(--border);
+}
+
+@media (max-width: 1100px) {
+  .workspace-shell {
+    flex-direction: column;
+  }
+
+  .sidebar,
+  .sidebar-tab {
+    position: static;
+    top: auto;
+    width: 100% !important;
+    max-height: none;
+  }
+
+  .sidebar-tab {
+    writing-mode: initial;
+    text-orientation: initial;
+  }
 }
 
 /* ─── 조합 트리 모달 ─── */
