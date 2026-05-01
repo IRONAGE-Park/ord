@@ -40,16 +40,17 @@ export const UnitRow = forwardRef<HTMLTableRowElement, Props>(function UnitRow(
   const recipe = getRecipe(unit.id);
   const canCombine = !!recipe && recipe.materials.length > 0;
 
-  const onPrimaryAction = (e?: React.MouseEvent | KeyboardEvent) => {
-    // Shift = 직접 +1 (덱에 그냥 +1, 조합 시도하지 않음)
-    if (e && 'shiftKey' in e && e.shiftKey) {
-      add(unit.id, 1);
-      return;
-    }
+  const onPrimaryAction = (e?: React.MouseEvent) => {
     if (isCommon || !canCombine) {
       add(unit.id, 1);
       return;
     }
+
+    if (!e?.ctrlKey && !e?.metaKey) {
+      add(unit.id, 1);
+      return;
+    }
+
     const r = combine(unit.id);
     if (!r.ok && r.missing && showLackedModal) {
       // 부족하면 조합 트리 모달을 열어서 어디서 막히는지 보여줌
@@ -86,7 +87,7 @@ export const UnitRow = forwardRef<HTMLTableRowElement, Props>(function UnitRow(
     unit.name,
     isCommon
       ? '(흔함 — 클릭: +1, 우클릭: -1)'
-      : '(클릭: 조합 시도, +1 버튼/Shift+클릭: 직접 생성, 우클릭: -1)',
+      : '(클릭: +1, Ctrl/Cmd+클릭: 조합 시도, 우클릭: -1)',
     progress
       ? `재료 ${matPct}% / 조합 ${totPct}%`
       : '',
@@ -164,20 +165,6 @@ export const UnitRow = forwardRef<HTMLTableRowElement, Props>(function UnitRow(
                 조 {totPct}%
               </span>
             </span>
-          )}
-          {canCombine && (
-            <button
-              className="unit-direct-add-button"
-              onClick={e => {
-                e.stopPropagation();
-                add(unit.id, 1);
-              }}
-              onContextMenu={e => e.stopPropagation()}
-              title="직접 생성 (+1)"
-              type="button"
-            >
-              +1
-            </button>
           )}
           {canCombine && (
             <button

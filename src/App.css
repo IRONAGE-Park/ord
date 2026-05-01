@@ -799,8 +799,7 @@
   color: #a3d9b1;
 }
 .unit-info-link,
-.unit-tree-button,
-.unit-direct-add-button {
+.unit-tree-button {
   flex-shrink: 0;
   height: 20px;
   display: inline-flex;
@@ -820,13 +819,6 @@
 .unit-tree-button {
   width: 20px;
 }
-.unit-direct-add-button {
-  min-width: 28px;
-  padding: 0 5px;
-  font-size: 10px;
-  opacity: 1;
-  color: var(--success);
-}
 .unit-row:hover .unit-info-link,
 .unit-row:hover .unit-tree-button {
   opacity: 1;
@@ -837,11 +829,6 @@
   text-decoration: none;
 }
 .unit-tree-button:hover {
-  background: var(--success);
-  border-color: var(--success);
-  color: #fff;
-}
-.unit-direct-add-button:hover {
   background: var(--success);
   border-color: var(--success);
   color: #fff;
