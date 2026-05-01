@@ -6,14 +6,16 @@ import type { Unit } from '../types';
 
 export function RecipeTreeModal() {
   const targetId = useApp(s => s.recipeModalUnitId);
+  if (targetId == null) return null;
+  return <RecipeTreeModalContent key={targetId} targetId={targetId} />;
+}
+
+function RecipeTreeModalContent({ targetId }: { targetId: number }) {
   const close = useApp(s => s.closeRecipeModal);
   const deck = useApp(s => s.deck);
   const [targetCount, setTargetCount] = useState(1);
 
-  // Esc 닫기 + 모달 열릴 때 카운트 초기화
   useEffect(() => {
-    if (targetId == null) return;
-    setTargetCount(1);
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         e.preventDefault();
@@ -22,9 +24,8 @@ export function RecipeTreeModal() {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [targetId, close]);
+  }, [close]);
 
-  if (targetId == null) return null;
   const target = getUnit(targetId);
   if (!target) return null;
   const recipe = getRecipe(targetId);

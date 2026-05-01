@@ -18,9 +18,12 @@ function App() {
       <TopBar />
       <FilterPanel />
       <NowDeck />
-      <main className="main-content">
-        <GradeGrid />
-      </main>
+      <div className="workspace-shell">
+        <Sidebar />
+        <main className="main-content">
+          <GradeGrid />
+        </main>
+      </div>
       <footer className="app-footer">
         클론: 데이터 출처{' '}
         <a
@@ -32,7 +35,6 @@ function App() {
         </a>{' '}
         · 아이콘 © ordsearch
       </footer>
-      <Sidebar />
       <RecipeTreeModal />
       <CandidatesModal />
       <CommandPalette />

@@ -41,7 +41,7 @@ export const UnitRow = forwardRef<HTMLTableRowElement, Props>(function UnitRow(
   const canCombine = !!recipe && recipe.materials.length > 0;
 
   const onPrimaryAction = (e?: React.MouseEvent | KeyboardEvent) => {
-    // Shift = 강제 추가 (덱에 그냥 +1, 조합 시도하지 않음)
+    // Shift = 직접 +1 (덱에 그냥 +1, 조합 시도하지 않음)
     if (e && 'shiftKey' in e && e.shiftKey) {
       add(unit.id, 1);
       return;
@@ -84,7 +84,9 @@ export const UnitRow = forwardRef<HTMLTableRowElement, Props>(function UnitRow(
 
   const tooltip = [
     unit.name,
-    isCommon ? '(흔함 — 클릭: +1, 우클릭: -1)' : '(클릭: 조합 시도, 우클릭: -1)',
+    isCommon
+      ? '(흔함 — 클릭: +1, 우클릭: -1)'
+      : '(클릭: 조합 시도, +1 버튼/Shift+클릭: 직접 생성, 우클릭: -1)',
     progress
       ? `재료 ${matPct}% / 조합 ${totPct}%`
       : '',
@@ -162,6 +164,20 @@ export const UnitRow = forwardRef<HTMLTableRowElement, Props>(function UnitRow(
                 조 {totPct}%
               </span>
             </span>
+          )}
+          {canCombine && (
+            <button
+              className="unit-direct-add-button"
+              onClick={e => {
+                e.stopPropagation();
+                add(unit.id, 1);
+              }}
+              onContextMenu={e => e.stopPropagation()}
+              title="직접 생성 (+1)"
+              type="button"
+            >
+              +1
+            </button>
           )}
           {canCombine && (
             <button
